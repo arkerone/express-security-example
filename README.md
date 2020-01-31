@@ -1,5 +1,7 @@
 # Express security example
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/arkerone/express-security-example.svg)](https://greenkeeper.io/)
+
 Simple Express project which use authentication middleware based on JWT. This project is a example to illustrate my post in my [blog](https://www.codeheroes.fr/index.php/2018/03/23/securiser-une-api-rest/).
 
 ## Getting Started
