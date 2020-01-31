@@ -1,0 +1,65 @@
+{
+  "name": "express-security-example",
+  "version": "1.0.0",
+  "description": "Express project which use authentication middleware based on JWT",
+  "author": {
+    "name": "Axel SHAÏTA",
+    "email": "shaita.axel@gmail.com",
+    "url": "https://www.codeheroes.fr"
+  },
+  "keywords": [
+    "authentication",
+    "auth",
+    "https",
+    "api",
+    "rest",
+    "jwt",
+    "json web token",
+    "express",
+    "expressjs",
+    "nodejs"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "seed": "grunt fixtures:seed",
+    "sync": "grunt sync:true",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arkerone/express-jwt-example"
+  },
+  "bugs": {
+    "url": "https://github.com/arkerone/express-jwt-example/issues"
+  },
+  "dependencies": {
+    "app-root-path": "^3.0.0",
+    "body-parser": "^1.19.0",
+    "chalk": "^3.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "dotenv-parse-variables": "^0.2.3",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mariadb": "^2.1.5",
+    "mysql2": "^2.1.0",
+    "pg": "^7.17.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.3",
+    "sequelize-fixtures": "^1.1.1",
+    "verror": "^1.10.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "grunt": "^1.0.4",
+    "prettier": "^1.19.1"
+  }
+}
