@@ -14,6 +14,7 @@ async function generateToken(user) {
     { firstName: user.firstName, lastName: user.lastName },
     config.accessToken.secret,
     {
+      algorithm: config.accessToken.algorithm,
       audience: config.accessToken.audience,
       expiresIn: config.accessToken.expiresIn,
       issuer: config.accessToken.issuer,

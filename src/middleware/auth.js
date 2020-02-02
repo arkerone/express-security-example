@@ -27,7 +27,7 @@ module.exports = async (req, res, next) => {
     }
 
     const {
-      accessToken: { type, secret }
+      accessToken: { type, secret, algorithm }
     } = config;
 
     const parts = headers.authorization.split(' ');
@@ -47,7 +47,9 @@ module.exports = async (req, res, next) => {
       });
     }
 
-    const { sub: userId } = await jwt.verify(token, secret);
+    const { sub: userId } = await jwt.verify(token, secret, {
+      algorithms: algorithm
+    });
     const user = await db.getModel('User').findOne({ where: { id: userId } });
     if (!user) {
       throw new BadCredentialsError({
