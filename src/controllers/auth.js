@@ -19,7 +19,7 @@ async function generateToken(user) {
     {
       algorithm: config.accessToken.algorithm,
       audience: config.accessToken.audience,
-      expiresIn: config.accessToken.expiresIn,
+      expiresIn: config.accessToken.expiresIn / 1000,
       issuer: config.accessToken.issuer,
       subject: user.id.toString()
     }
