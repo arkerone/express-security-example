@@ -1,8 +1,11 @@
 /* eslint-disable no-ex-assign */
 const jwt = require('jsonwebtoken');
+const { promisify } = require('util');
 const { InvalidTokenError, ExpiredTokenError, BadCredentialsError } = require('../errors');
 const { token: config } = require('../config');
 const db = require('../db');
+
+const jwtVerify = promisify(jwt.verify);
 
 /**
  * Auth Middleware
@@ -47,7 +50,7 @@ module.exports = async (req, res, next) => {
       });
     }
 
-    const { sub: userId } = await jwt.verify(token, secret, {
+    const { sub: userId } = await jwtVerify(token, secret, {
       algorithms: algorithm
     });
     const user = await db.getModel('User').findOne({ where: { id: userId } });
