@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
+const { promisify } = require('util');
 const {
   BadCredentialsError,
   InvalidTokenError,
@@ -9,14 +10,16 @@ const {
 const db = require('../db');
 const { token: config } = require('../config');
 
+const jwtSign = promisify(jwt.sign);
+
 async function generateToken(user) {
-  const accessToken = await jwt.sign(
+  const accessToken = await jwtSign(
     { firstName: user.firstName, lastName: user.lastName },
     config.accessToken.secret,
     {
       algorithm: config.accessToken.algorithm,
       audience: config.accessToken.audience,
-      expiresIn: config.accessToken.expiresIn,
+      expiresIn: config.accessToken.expiresIn / 1000,
       issuer: config.accessToken.issuer,
       subject: user.id.toString()
     }
