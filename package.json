@@ -42,7 +42,7 @@
     "dotenv-parse-variables": "^0.2.3",
     "express": "^4.17.1",
     "helmet": "^3.21.2",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.19",
     "mariadb": "^2.1.5",
     "mysql2": "^2.1.0",
